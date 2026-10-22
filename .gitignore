@@ -1,0 +1,40 @@
+# Nuxt build & dependencies
+.nuxt/
+.output/
+.nitro/
+dist/
+node_modules/
+.npmrc
+
+# Logs & Environment
+*.log
+.env*
+
+# Rules & Docs
+GEMINI.md
+README.md
+.agents/
+scratch/
+
+# SEO & Línguas
+app/locales/
+sitemap.xml
+robots.txt
+
+# Funcionalidades e páginas fora da homepage (apenas homepage entra)
+app/pages/constroi-e-decora.vue
+app/pages/politica-de-privacidade.vue
+app/pages/termos-e-condicoes.vue
+app/components/builder/
+app/composables/useRoomBuilder.ts
+shared/types/builder.ts
+shared/data/furnitureCatalog.ts
+
+# Workflows & CI
+.github/
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
