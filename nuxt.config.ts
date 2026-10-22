@@ -6,6 +6,10 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: false },
 
+  app: {
+    baseURL: process.env.NUXT_APP_BASE_URL || '/'
+  },
+
   modules: [
     '@nuxt/ui',
     '@nuxt/image',

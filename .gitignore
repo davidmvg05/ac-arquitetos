@@ -16,8 +16,7 @@ README.md
 .agents/
 scratch/
 
-# SEO & Línguas
-app/locales/
+# SEO
 sitemap.xml
 robots.txt
 
@@ -29,9 +28,6 @@ app/components/builder/
 app/composables/useRoomBuilder.ts
 shared/types/builder.ts
 shared/data/furnitureCatalog.ts
-
-# Workflows & CI
-.github/
 
 # OS & Editor
 .DS_Store
