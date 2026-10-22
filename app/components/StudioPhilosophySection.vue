@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const sectionWrapRef = ref<HTMLElement | null>(null)
 const draftingWrapRef = ref<HTMLElement | null>(null)
+const { withBase } = useAssetUrl()
 let ctx: gsap.Context | null = null
 
 // Architectural Technical Drafting building sequence (6 progressive stages)
@@ -193,7 +194,7 @@ onBeforeUnmount(() => {
         :class="currentFrame === idx ? 'opacity-40 z-10' : 'opacity-0 z-0 pointer-events-none'"
       >
         <img
-          :src="img.src"
+          :src="withBase(img.src)"
           :alt="img.alt"
           class="w-full h-full object-contain md:object-cover object-center scale-150 md:scale-100 origin-center select-none"
           loading="eager"

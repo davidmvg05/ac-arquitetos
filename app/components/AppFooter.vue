@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+const { withBase } = useAssetUrl()
 const currentYear = computed(() => new Date().getFullYear())
 
 const socialLinks = [
@@ -29,7 +30,8 @@ const socialLinks = [
   >
     <!-- Architectural Drafting Sheet SVG Background Image (Full Section) -->
     <div
-      class="absolute inset-0 w-full h-full pointer-events-none select-none bg-[url('/images/footer/architectural-drafting-sheet.svg')] bg-cover bg-center"
+      class="absolute inset-0 w-full h-full pointer-events-none select-none bg-cover bg-center"
+      :style="{ backgroundImage: `url(${withBase('/images/footer/architectural-drafting-sheet.svg')})` }"
       aria-hidden="true"
     />
 
@@ -40,8 +42,8 @@ const socialLinks = [
         <!-- Logo & Brand Column -->
         <div class="md:col-span-5 flex flex-col justify-between">
           <div class="flex items-center gap-4">
-            <NuxtImg
-              src="/images/brand/logo-ac.png"
+            <img
+              :src="withBase('/images/brand/logo-ac.png')"
               alt="Logótipo Oficial AC-Arquitetos"
               width="64"
               height="62"

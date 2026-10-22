@@ -13,6 +13,7 @@ const {
   setHeaderHidden
 } = useHeaderState()
 
+const { withBase } = useAssetUrl()
 const { locale, setLocale } = useI18n()
 const route = useRoute()
 
@@ -217,8 +218,8 @@ onBeforeUnmount(() => {
           aria-label="AC-Arquitetos Início"
           @click="closeMenu"
         >
-          <NuxtImg
-            src="/images/brand/logo-ac.png"
+          <img
+            :src="withBase('/images/brand/logo-ac.png')"
             alt="Logótipo AC-Arquitetos"
             width="48"
             height="46"
@@ -313,7 +314,7 @@ onBeforeUnmount(() => {
               v-for="item in menuItemsData"
               :key="item.path"
               class="absolute inset-0 bg-cover bg-center transition-opacity duration-300 ease-out"
-              :style="{ backgroundImage: `url(${item.image})` }"
+              :style="{ backgroundImage: `url(${withBase(item.image)})` }"
               :class="activeImage === item.image ? 'opacity-100 z-10' : 'opacity-0 z-0'"
             />
 
@@ -327,8 +328,8 @@ onBeforeUnmount(() => {
           <!-- Top bar inside sidebar -->
           <div class="relative z-10 p-6 lg:p-8 flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <NuxtImg
-                src="/images/brand/logo-ac.png"
+              <img
+                :src="withBase('/images/brand/logo-ac.png')"
                 alt="AC-Arquitetos"
                 width="36"
                 height="35"
