@@ -45,19 +45,34 @@ export default defineNuxtConfig({
       {
         code: 'pt',
         language: 'pt-PT',
-        name: 'Português',
-        file: 'pt-PT.json'
+        name: 'Português'
       },
       {
         code: 'en',
         language: 'en-US',
-        name: 'English',
-        file: 'en-US.json'
+        name: 'English'
       }
     ],
     defaultLocale: 'pt',
-    strategy: 'prefix_except_default',
-    langDir: '../app/locales'
+    strategy: 'prefix_except_default'
+  },
+
+  linkChecker: {
+    enabled: false
+  },
+
+  nitro: {
+    prerender: {
+      ignore: [
+        '/constroi-e-decora',
+        '/politica-de-privacidade',
+        '/termos-e-condicoes',
+        '/en/constroi-e-decora',
+        '/en/politica-de-privacidade',
+        '/en/termos-e-condicoes'
+      ],
+      failOnError: false
+    }
   },
 
   site: {

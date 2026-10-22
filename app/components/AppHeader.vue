@@ -141,7 +141,6 @@ onMounted(() => {
 onBeforeUnmount(() => {
   if (import.meta.client) {
     window.removeEventListener('scroll', handleScroll)
-    if (crossfadeTimer) clearTimeout(crossfadeTimer)
   }
 })
 </script>
@@ -173,7 +172,7 @@ onBeforeUnmount(() => {
               : 'border-paper/40 hover:border-paper bg-ink/30 backdrop-blur-xs text-paper'
           ]"
           :aria-expanded="isMenuOpen"
-          :aria-label="isMenuOpen ? $t('nav.closeMenu') : $t('nav.openMenu')"
+          :aria-label="isMenuOpen ? 'Fechar menu' : 'Abrir menu'"
           @click="toggleMenu"
         >
           <div class="w-5 h-3 flex flex-col justify-between items-start">
